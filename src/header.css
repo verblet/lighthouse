@@ -1,0 +1,89 @@
+
+#top-menu {
+  @apply app-width bg-transparent text-gray-8 px-6 py-3;
+
+  a {
+    @apply text-gray-8;
+  }
+
+  #sidebar-menu-toggle {
+    @apply text-gray-8
+  }
+
+  #logo {
+    @apply header-2;
+  }
+
+}
+
+
+#header {
+  @apply app-width bg-transparent text-gray-8 w-full py-1 py-3;
+
+  body.has-main-menu & {
+    @apply p-0;
+  }
+
+  h1 {
+    @apply hidden;
+  }
+
+}
+
+#quick-search {
+  @apply float-none block min-block-auto m-0 grow-0;
+
+  form {
+    @apply bg-white float-right text-gray-8 rounded-lg border-1 p-1 border-gray-5;
+
+    > label a {
+      @apply text-gray-8;
+    }
+    > #q {
+      @apply border-0 bg-transparent;
+    }
+
+  }
+
+}
+
+
+#project-jump.drdn {
+  @apply float-none block mx-auto inline-65;
+
+  .drdn-trigger {
+    @apply border-transparent rounded-lg bg-transparent p-2 block-auto header-3;
+
+    #project-jump.expanded &,
+    &:hover {
+      @apply border-gray-6 bg-surface;
+    }
+
+  }
+  .drdn-content {
+    @apply min-inline-auto inline-65 inset-s-0 inset-bs-10 border-gray-6;
+  }
+
+}
+
+body #collapsible-sidebar-menu {
+  @apply bg-transparent text-gray-8 shadow-none top-10;
+
+  .general-menu {
+    @apply px-4 py-8;
+  }
+
+  .top-menu__links ul {
+    @apply gap-0;
+
+    li {
+
+      a {
+        @apply menu-item text-gray-8;
+      }
+
+    }
+
+  }
+
+}

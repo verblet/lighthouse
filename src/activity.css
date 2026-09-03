@@ -1,0 +1,33 @@
+
+#activity {
+
+  dt, dd {
+    @apply border-s-1 border-gray-3 ps-4 ms-4;
+  }
+
+  dt {
+    @apply text-gray-6 mbe-1 flex gap-2;
+
+    .avatar {
+      @apply hidden;
+    }
+
+    .time {
+      @apply order-last;
+    }
+
+    a {
+      @apply grow-1;
+    }
+
+  }
+
+  dd {
+    @apply mbe-4;
+  }
+
+}
+
+p.nodata {
+  @apply italic text-gray-6;
+}

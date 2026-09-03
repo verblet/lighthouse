@@ -1,0 +1,77 @@
+body {
+	@apply bg-gray-2 text-base;
+}
+
+a, a:link, a:visited {
+  @apply sd-link ;
+}
+
+b, strong {
+  @apply font-bold;
+}
+
+h1 {
+  @apply header-1;
+}
+
+h2 {
+  @apply header-2;
+}
+
+h3 {
+  @apply header-3;
+}
+
+h4 {
+  @apply header-4;
+}
+
+hr {
+  @apply bg-gray-1;
+}
+
+input[type="submit"], button[type="submit"], input[type="file"],
+select[multiple="multiple"],
+input, select, textarea, button {
+  @apply input;
+}
+
+
+input[type="submit"], button[type="submit"] {
+  @apply submit;
+}
+
+select {
+  @apply !pe-5;
+}
+
+
+input[type="checkbox"] {
+  @apply me-2;
+}
+
+
+input[type="file"] {
+  @apply border-0 bg-surface-low;
+}
+
+
+#query_form_content {
+	@apply text-base;
+}
+
+table, td,th {
+	@apply text-base;
+}
+
+.contextual {
+	@apply text-base;
+}
+
+.buttons {
+	@apply mx-1 my-0
+}
+
+.box {
+  @apply p-0 m-0 mbe-1 border-0 bg-transparent;
+}

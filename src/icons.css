@@ -1,0 +1,102 @@
+
+
+/***** SVG Icons *****/
+.icon, .icon-only {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.icon svg, .icon-only svg {
+  flex-shrink: 0;
+}
+
+a.icon .icon-svg,
+a.icon-only .icon-svg,
+span.icon-actions .icon-svg {
+  stroke: var(--oc-blue-7);
+  fill: none;
+}
+
+a.icon:hover .icon-svg,
+a.icon-only:hover .icon-svg,
+span.icon-actions:hover .icon-svg {
+  stroke: var(--oc-blue-5);
+}
+
+a.icon .icon-svg-filled,
+a.icon-only .icon-svg-filled {
+  stroke: none;
+  fill: var(--oc-blue-7);
+}
+
+a.icon:hover .icon-svg-filled, a.icon-only:hover .icon-svg-filled {
+  stroke: none;
+  fill: var(--oc-blue-5);
+}
+
+.icon-ok svg.icon-svg {
+  stroke: var(--oc-green-8);
+}
+
+.icon-error svg.icon-svg {
+  stroke: var(--oc-red-8);
+}
+
+.icon-warning svg.icon-svg {
+  stroke: var(--oc-yellow-8);
+}
+
+.icon-only span {
+  display: none;
+}
+
+svg.icon-svg {
+  stroke: var(--oc-gray-8);
+  fill: none;
+  stroke-width: 1.5;
+  vertical-align: middle;
+}
+
+svg.icon-svg-filled {
+  fill: var(--oc-gray-8);
+  stroke: none;
+}
+
+html[dir="rtl"] svg.icon-svg.icon-rtl {
+  transform: scaleX(-1);
+}
+
+
+svg.s20 {
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+}
+
+svg.s18 {
+  inline-size: 1.125rem;
+  block-size: 1.125rem;
+}
+
+svg.s16 {
+  inline-size: 1rem;
+  block-size: 1rem;
+}
+
+svg.s14 {
+  inline-size: 0.875rem;
+  block-size: 0.875rem;
+}
+
+svg.s12 {
+  inline-size: 0.75rem;
+  block-size: 0.75rem;
+}
+
+span.icon-label {
+  margin-inline-start: 4px;
+}
+
+span.icon-checked:has(:not(a svg.icon-svg)) svg.icon-svg {
+  stroke: var(--oc-green-8);
+}

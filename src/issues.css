@@ -1,0 +1,195 @@
+
+#sticky-issue-header {
+  @apply hidden;
+}
+body.controller-issues.action-show {
+
+  /*
+  #content > .badge,
+  #content > h2 {
+    @apply hidden my-3;
+  } */
+
+  #main {
+    @apply max-w-270;
+  }
+
+  .refreshData {
+    @apply hidden;
+  }
+
+  #sidebar-wrapper {
+
+    #watchers h3 {
+      @apply mbs-3;
+    }
+
+  }
+
+  div.dynamicEditField {
+    @apply bottom-auto top-6 -left-3 p-2;
+
+    button.action {
+      @apply bg-transparent align-middle;
+    }
+
+  }
+
+}
+
+.other-formats {
+  @apply text-right clear-both;
+}
+
+#query_form {
+  @apply box;
+}
+
+#content > div.issue {
+  @apply clear-both box;
+
+   > div > p {
+    @apply my-4;
+   }
+
+   > .avatar-with-child {
+     @apply hidden;
+   }
+
+   .reaction {
+     @apply float-right clear-right;
+   }
+
+   .subject h3 {
+     @apply text-xl font-bold my-2;
+   }
+
+}
+
+
+.thumbnails {
+  @apply flex gap-1;
+}
+
+.author {
+  @apply text-gray-6;
+  a {
+    @apply text-gray-6;
+  }
+}
+
+.journal-header {
+  @apply text-gray-6 mbe-1;
+  a {
+    @apply text-gray-6;
+  }
+}
+
+.journal {
+  @apply my-4;
+
+  &.has-details {
+    @apply border-s-1 border-gray-3 ps-4 ms-4;
+
+      .avatar {
+        @apply hidden;
+      }
+
+  }
+
+
+  &.has-notes {
+    @apply clear-both border-1 border-gray-3 rounded-lg p-5;
+
+    .avatar {
+      @apply align-top;
+    }
+
+  }
+
+  ul.journal-details {
+    @apply m-0;
+
+    > li {
+      @apply my-0;
+    }
+  }
+
+  .journal-meta {
+    @apply hidden float-right;
+  }
+
+  &:hover .journal-meta {
+    @apply block;
+  }
+
+}
+
+div.description,
+div.attributes {
+  @apply my-4;
+}
+
+.attributes {
+  @apply flex flex-col;
+
+  .splitcontent > div {
+    @apply w-[50%];
+  }
+
+}
+
+
+#ticket_data {
+  @apply flatbox flex gap-2 items-center order-first;
+
+  .ticket_customer {
+      @apply grow-1;
+  }
+
+}
+
+#history {
+  @apply mbs-4 mbe-16;
+}
+
+/*
+.splitcontent > div {
+  @apply flex gap-6;
+}
+
+.splitcontent > div > div {
+  @apply flex flex-col;
+} */
+
+.attribute {
+  @apply flex gap-1;
+
+  .label {
+    @apply font-bold;
+  }
+
+  .label,
+  .value {
+      @apply inline-block me-2 !p-0;
+  }
+}
+
+.priority-high3,
+.priority-high4,
+.priority-high5 {
+  .priority {
+    @apply text-red-8;
+  }
+}
+
+
+.overdue .due-date.attribute {
+  @apply text-red-8;
+}
+
+/* WATCHERS */
+
+.watchers li {
+  @apply flex gap-2 items-center;
+}

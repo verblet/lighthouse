@@ -1,0 +1,93 @@
+
+/* Avatar styles */
+.avatar {
+  border-radius: 20%;
+  display: inline-flex;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+span[role="img"].avatar {
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  align-items: center;
+  display: inline-flex;
+  font-size: calc(24px * .4);
+  justify-content: center;
+  user-select: none;
+  font-weight: 700;
+}
+.avatar.s13 {
+  block-size: 13px;
+  inline-size: 13px;
+}
+span[role="img"].avatar.s13 {
+  font-size: calc(16px * .3);
+}
+.avatar.s16 {
+  block-size: 16px;
+  inline-size: 16px;
+}
+span[role="img"].avatar.s16 {
+  font-size: calc(16px * .4);
+}
+.avatar.s22 {
+  block-size: 22px;
+  inline-size: 22px;
+}
+span[role="img"].avatar.s22 {
+  font-size: calc(22px * .4);
+}
+.avatar.s24 {
+  block-size: 24px;
+  inline-size: 24px;
+}
+span[role="img"].avatar.s24  {
+  font-size: calc(24px * .4);
+}
+.avatar.s40 {
+  block-size: 40px;
+  inline-size: 40px;
+}
+span[role="img"].avatar.s40  {
+  font-size: calc(40px * .4);
+}
+.avatar.s50 {
+  block-size: 50px;
+  inline-size: 50px;
+}
+span[role="img"].avatar.s50  {
+  font-size: calc(50px * .4);
+}
+
+.avatar-color-0 {
+  background-color: var(--oc-red-7);
+  color: var(--oc-white);
+}
+.avatar-color-1 {
+  background-color: var(--oc-orange-6);
+  color: var(--oc-white);
+}
+.avatar-color-2 {
+  background-color: var(--oc-yellow-4);
+  color: var(--oc-black);
+}
+.avatar-color-3 {
+  background-color: var(--oc-green-7);
+  color: var(--oc-white);
+}
+.avatar-color-4 {
+  background-color: var(--oc-cyan-6);
+  color: var(--oc-white);
+}
+.avatar-color-5 {
+  background-color: var(--oc-blue-7);
+  color: var(--oc-white);
+}
+.avatar-color-6 {
+  background-color: var(--oc-grape-7);
+  color: var(--oc-white);
+}
+.avatar-color-7 {
+  background-color: var(--oc-pink-5);
+  color: var(--oc-white);
+}

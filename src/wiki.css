@@ -1,0 +1,42 @@
+
+
+/* Wiki */
+
+.description .wiki {
+  @apply text-base;
+}
+
+div.wiki-page {
+  @apply mbs-10 text-lg;
+}
+
+div.wiki {
+
+  h1 {
+    @apply text-2xl my-3;
+  }
+
+  h2 {
+    @apply text-xl my-2;
+  }
+
+  h3 {
+    @apply text-lg my-1;
+  }
+
+  p {
+    @apply mbs-0 mbe-3;
+  }
+
+  a {
+    @apply wiki-link underline;
+  }
+
+  ul {
+    @apply my-3 list-disc ps-6;
+  }
+
+  ul li {
+    @apply ps-1;
+  }
+}

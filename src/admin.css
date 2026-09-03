@@ -1,0 +1,18 @@
+
+.list.plugins {
+
+  span.name {
+    @apply block font-bold;
+  }
+
+}
+
+
+#admin-index {
+
+  ul {
+    @apply columns-3 gap-4;
+  }
+
+
+}

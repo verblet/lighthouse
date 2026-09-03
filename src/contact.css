@@ -1,0 +1,17 @@
+
+#wrapper {
+
+  div.contact {
+    @apply flatbox flex gap-1 items-center;
+
+    .subject_header {
+      @apply flex items-center;
+
+      .name .header {
+        @apply primary-link;
+      }
+
+    }
+
+  }
+}

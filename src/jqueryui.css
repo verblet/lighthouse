@@ -1,0 +1,12 @@
+
+.ui-widget.ui-widget-content {
+  @apply bg-page-tint border-1 border-gray-3 rounded-md shadow-[0px_2px_4px_0_rgba(0,0,0,0.1)];
+}
+
+.ui-widget-header {
+  @apply border-0 bg-page-tint;
+}
+
+.ui-dialog h3.title {
+  @apply my-2;
+}

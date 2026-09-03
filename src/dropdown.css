@@ -1,0 +1,106 @@
+
+/***** Dropdown *****/
+.drdn {position:relative;}
+.drdn-trigger {
+  box-sizing:border-box;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  cursor:pointer;
+  user-select:none;
+  -moz-user-select:none;
+  -webkit-user-select:none;
+}
+.drdn-content {
+  display:none;
+  position:absolute;
+  inset-inline-end:0px;
+  inset-block-start:25px;
+  min-inline-size:100px;
+  box-shadow: 0 4px 6px rgba(var(--oc-black-rgb), 0.1);
+  background-color:var(--color-white);
+  border:1px solid var(--oc-gray-3);
+  border-radius:4px;
+  color:var(--oc-gray-9);
+  z-index:99;
+}
+.drdn.expanded .drdn-content {display:block;}
+
+.drdn-content .quick-search {margin:8px; display: flex; align-items: center;}
+.drdn-content .quick-search svg {margin-inline-start: 5px; position: absolute;}
+.drdn-content .quick-search input.autocomplete {background: none; padding-inline-start: 24px !important;}
+.drdn-content .autocomplete {box-sizing: border-box; inline-size: 100% !important; block-size: 28px;}
+.drdn-content .autocomplete:focus {border-color: var(--oc-blue-5);}
+.drdn-items {max-block-size: 400px; overflow: auto;}
+div + .drdn-items {border-block-start: 1px solid var(--color-gray-3);}
+.drdn-items>* {
+  display:block;
+  border:1px solid var(--color-white);
+  overflow:hidden;
+  text-overflow: ellipsis;
+  white-space:nowrap;
+  padding-block: 4px;
+  padding-inline: 8px;
+}
+.drdn-items>a:hover {text-decoration:none;}
+.drdn-items>*:focus {border:1px dotted var(--oc-gray-9);}
+
+.drdn-items.selection>*:before {
+  content:' ';
+  display:inline-block;
+  line-height:1em;
+  inline-size:1em;
+  block-size:1em;
+  margin-inline-end:4px;
+  font-weight:bold;
+}
+.drdn-items.selection>*.selected:before {
+  content:"\2713 ";
+}
+.drdn-items.selection:empty {
+  border: none;
+}
+.drdn-items>span {color:var(--oc-gray-6);}
+
+.contextual .drdn-content, .journal-actions .drdn-content {
+  inset-block-start: 18px;
+}
+
+.contextual .drdn-items, .journal-actions .drdn-items {
+  padding: 2px;
+  min-inline-size: 160px;
+}
+
+.contextual .drdn-items > a, .journal-actions .drdn-items > a {
+  display: flex;
+  padding-block: 5px;
+  padding-inline: 8px;
+}
+
+.contextual .drdn-items > a:hover, .journal-actions .drdn-items > a:hover {
+  color: var(--oc-blue-9);
+  border-color:transparent;
+  background-color: var(--oc-gray-1);
+  border-radius: 3px;
+}
+
+
+#project-jump.drdn {inline-size: 200px; display: inline-block;}
+#project-jump .drdn-trigger {
+  inline-size: 100%;
+  block-size: 24px;
+  display:inline-block;
+  padding-block: 1.5px 3px;
+  padding-inline: 6px 18px;
+  border-radius:3px;
+  border:1px solid var(--color-gray-6);
+  margin:0 !important;
+  vertical-align:middle;
+  color:var(--oc-gray-7);
+  background:var(--color-white) url("/assets/chevron-down-f08c7c57.svg") no-repeat 98% 50%;
+  @apply input;
+}
+#project-jump .drdn.expanded .drdn-trigger {background-image:url("/assets/arrow_up-4c153772.png");}
+#project-jump .drdn-content {inline-size: 280px;}
+#project-jump .drdn-items>* {color:var(--oc-gray-7) !important;}
+#project-jump .drdn-items>a:hover {background-color: var(--oc-blue-7); color:var(--color-white) !important;}

@@ -1,0 +1,14 @@
+
+table.gantt-table {
+    @apply text-sm;
+
+    a {
+        @apply text-sm;
+    }
+
+    .gantt_subjects div,
+    .gantt_selected_column_content div {
+      @apply block-auto;
+    }
+
+}

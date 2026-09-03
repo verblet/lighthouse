@@ -1,0 +1,7 @@
+#roadmap {
+  h3 {
+    &, a {
+      @apply text-xl my-1;
+    }
+  }
+}

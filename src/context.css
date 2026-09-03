@@ -1,0 +1,44 @@
+
+.contextual {
+  @apply m-0 p-0 ps-1 text-sm flex gap-0;
+
+  > a,
+  > .drdn {
+    @apply borderless-button m-0;
+  }
+
+}
+
+#content > .contextual {
+  @apply m-0 p-0 ps-1;
+}
+
+
+#query_form_with_buttons a.icon,
+#content > .contextual > .icon {
+  @apply borderless-button;
+}
+
+
+a.icon svg.icon-svg,
+a.icon-only svg.icon-svg,
+span.icon-actions svg.icon-svg {
+  @apply stroke-gray-medium inline-block; 
+}
+
+a.icon svg.icon-svg-filled,
+a.icon-only svg.icon-svg-filled {
+  @apply stroke-none fill-gray-medium;
+}
+
+a.icon:hover .icon-svg,
+a.icon-only:hover .icon-svg,
+span.icon-actions:hover .icon-svg {
+  @apply stroke-link-hover;
+}
+
+
+a.icon:hover svg.icon-svg-filled,
+a.icon-only:hover svg.icon-svg-filled {
+  @apply stroke-none fill-link-hover;
+}
