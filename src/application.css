@@ -13,13 +13,25 @@
   --font-sans: "Noto Sans", sans-serif;
   --default-font-family: var(--font-sans);
 
+  --color-primary: var(--color-blue-7);
+  --color-primary-light: var(--color-blue-5);
+  --color-primary-vlight: #eee;
+
+  --color-blue: var(--color-blue-5);
+
+  --color-cyan-vlight: #d9ece9;
+  --color-cyan-light: #20cfd8;
+  --color-cyan: #11aeb6;
+  --color-cyan-dark: #009299;
+
   --color-surface: var(--color-page-tint);
   --color-surface-low: var(--color-gray-vlight);
 
   --color-white: var(--color-page-tint);
 
-  --color-link: var(--oc-gray-7);
-  --color-link-hover: var(--oc-blue-7);
+  --color-text: var(--oc-gray-7);
+  --color-link: var(--color-primary);
+  --color-link-hover: var(--color-primary-light);
 
   --color-page-tint: #fefefe;
   --color-page-tint-1: hsl(135, 29%, 97%);
@@ -81,15 +93,15 @@
 }
 
 @utility primary-link {
-  @apply text-base font-normal text-blue-7 no-underline hover:underline hover:text-blue-5;
+  @apply font-normal text-link no-underline hover:underline hover:text-link-hover;
 }
 
 @utility wiki-link {
-  @apply text-base font-normal text-blue-7 underline hover:text-blue-5;
+  @apply font-normal text-link underline hover:text-link-hover;
 }
 
 @utility input {
-  @apply px-1 py-1 block-auto max-w-full border-1 border-gray-4 rounded-sm text-gray-dark text-base font-normal;
+  @apply px-1 py-1 block-auto max-w-full bg-page-tint border-1 border-gray-4 rounded-sm text-gray-dark text-base font-normal;
 }
 
 @utility button {
@@ -97,11 +109,15 @@
 }
 
 @utility box {
-  @apply my-2 p-5 border-1 border-gray-3 rounded-lg
+  @apply my-2 p-5 bg-page-tint border-1 border-gray-3 rounded-lg;
+}
+
+@utility popbox {
+  @apply p-2 bg-page-tint text-gray-8 border-1 border-gray-3 rounded-lg shadow-["0_4px_6px_rgba(var(--oc-black-rgb),_0.1)"];
 }
 
 @utility flatbox {
-  @apply my-2 py-2 px-2 bg-gray-2 border-0 rounded-md
+  @apply my-2 py-2 px-2 bg-gray-2 border-0 rounded-md;
 }
 
 body {
@@ -138,6 +154,10 @@ ul > li {
 
 strong {
   @apply font-bold;
+}
+
+small {
+    @apply text-sm inline-block;
 }
 
 hr {
@@ -179,7 +199,10 @@ label.block {
 }
 
 #top-menu {
-  @apply flex gap-2 py-1 items-center;
+  --color-text: var(--color-text);
+  --color-link: var(--color-text);
+  --color-link-hover: var(--color-text);
+  @apply flex border-be-1 border-gray-3 text-text gap-2 items-center py-1 px-10 xl:px-30;
 
   ul {
     @apply menu;
@@ -211,16 +234,17 @@ label.block {
   @apply flex gap-3 items-center grow-1;
 
   &:before {
-    content: url("data:image/svg+xml,%3Csvg id='Capa_1' enable-background='new 0 0 512 512' height='28' viewBox='0 0 512 512' width='28' xmlns='http://www.w3.org/2000/svg'%3E%3Cg%3E%3Cpath d='m431.038 412.017h-55.278l-39.087-246.375h27.489v-30h-30.056v-17.398c0-37.937-27.192-69.629-63.105-76.645v-41.599h-30v41.598c-35.914 7.016-63.105 38.708-63.105 76.645v17.398h-30.056v30h27.489l-39.089 246.376h-55.278v69.983h-80.962v30h512v-30h-80.962zm-235.048-185.155h120.02l4.953 31.22h-129.926zm11.905-108.619c0-26.525 21.58-48.105 48.105-48.105s48.105 21.58 48.105 48.105v17.398h-33.105v-27.679h-30v27.679h-33.105zm98.403 47.399 4.953 31.221h-110.502l4.953-31.221zm-120.021 122.44h139.446l19.662 123.935h-41.656v-50.362c0-26.318-21.411-47.729-47.729-47.729s-47.729 21.411-47.729 47.729v50.362h-41.656zm87.452 123.935h-35.459v-50.362c0-9.776 7.953-17.729 17.729-17.729s17.729 7.953 17.729 17.729v50.362zm-162.767 30h290.076v39.983h-290.076z'/%3E%3Cpath d='m377.249 59.339h84.768v30h-84.768z' transform='matrix(.906 -.423 .423 .906 7.896 184.298)'/%3E%3Cpath d='m404.633 184.561h30v84.768h-30z' transform='matrix(.423 -.906 .906 .423 36.607 511.352)'/%3E%3Cpath d='m0 135.642h57.827v30h-57.827z'/%3E%3Cpath d='m77.367 31.955h30v84.768h-30z' transform='matrix(.423 -.906 .906 .423 -14.043 126.636)'/%3E%3Cpath d='m49.983 211.945h84.768v30h-84.768z' transform='matrix(.906 -.423 .423 .906 -87.256 60.298)'/%3E%3Cpath d='m87.831 135.642h30.004v30h-30.004z'/%3E%3Cpath d='m454.173 135.642h57.827v30h-57.827z'/%3E%3Cpath d='m394.165 135.642h30.004v30h-30.004z'/%3E%3C/g%3E%3C/svg%3E%0A");
-    @apply relative top-1 mx-2;
+    content: "Lighthouse";
+    @apply me-2 font-bold;
   }
 
 }
 
 
-
-#wrapper {
-  @apply px-10 xl:px-30;
+#header,
+#main,
+#footer {
+  @apply mx-10 xl:mx-30;
 }
 
 #main {
@@ -386,8 +410,14 @@ table {
     @apply w-8;
   }
 
-  td.subject {
-    @apply font-bold min-w-70;
+  td.subject,
+  td.subject > a {
+    @apply font-medium min-w-70;
+  }
+
+  th.id,
+  td.id {
+    @apply hidden;
   }
 
   td,th {
@@ -444,26 +474,6 @@ ul.pages {
   @apply col-span-full;
 }
 
-#my-page.splitcontent {
-  @apply block;
-}
-
-
-#projects-index {
-  ul.project {
-    @apply grid grid-cols-3 gap-2;
-  }
-}
-
-
-.mypage-box {
-  @apply box;
-
-  .autoscroll {
-    @apply border-0 p-0;
-  }
-}
-
 
 .tabular {
 
@@ -498,10 +508,27 @@ ul.cal {
     @apply p-2 m-0 !border-gray-3;
   }
 
+  .starting a.issue {
+    @apply p-0 bg-transparent;
+  }
+
   .week-number,
   .calhead,
   .calbody {
     @apply bg-transparent !p-2 m-0 font-normal;
+  }
+
+  .calbody,
+  .calbody a {
+    @applt text-sm;
+  }
+
+  .issue {
+    @apply mbe-2 bg-[#e1e1e170] p-1 rounded-md;
+
+      svg {
+        @apply hidden;
+      }
   }
 
 }
@@ -513,10 +540,6 @@ ul.cal {
    @apply flex gap-2;
  }
 
-}
-
-body.controller-my #wrapper {
-  @apply max-w-200;
 }
 
 .inline-flex {
@@ -531,6 +554,10 @@ body.controller-my #wrapper {
   @apply text-[#f0a0a0];
 }
 
+.context-menu-selection a {
+  @apply text-white;
+}
+
 
 @import "./icons.css";
 @import "./dropdown.css";
@@ -540,6 +567,8 @@ body.controller-my #wrapper {
 @import "./activity.css";
 @import "./contact.css";
 @import "./wiki.css";
+@import "./mypage.css";
 @import "./roadmap.css";
+@import "./tooltip.css";
 @import "./gantt.css";
 @import "./jqueryui.css";

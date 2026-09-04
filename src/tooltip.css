@@ -1,0 +1,45 @@
+
+.tooltip {
+  position:relative;
+  z-index:24
+}
+.tooltip:hover {
+  z-index:25
+}
+.tooltip span.tip {
+  display:none;
+  text-align:left;
+  position:relative;
+  @apply popbox;
+}
+.tooltip span:after,
+.tooltip span:before {
+  bottom:100%;
+  left:10%;
+  border:solid transparent;
+  content:" ";
+  height:0;
+  width:0;
+  position:absolute;
+  pointer-events:none
+}
+.tooltip span.tip:after {
+  border-color:rgba(255,255,255,0);
+  border-bottom-color:#fff;
+  border-width:12px;
+  margin-left:-12px
+}
+.tooltip span.tip:before {
+  border-color:rgba(231,231,231,0);
+  border-bottom-color:#e7e7e7;
+  border-width:14px;
+  margin-left:-14px
+}
+div.tooltip:hover span.tip {
+  display:block;
+  position:absolute;
+  top:30px;
+  left:20px;
+  width:270px;
+  @apply popbox;
+}

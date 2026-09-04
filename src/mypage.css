@@ -1,0 +1,16 @@
+
+
+#projects-index {
+  ul.project {
+    @apply grid grid-cols-3 gap-2;
+  }
+}
+
+
+.mypage-box {
+  @apply box;
+
+  .autoscroll {
+    @apply border-0 p-0;
+  }
+}
