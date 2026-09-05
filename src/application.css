@@ -59,11 +59,14 @@
   --color-button-border: var(--color-gray-9);
 
   --color-yellow-1: var(--oc-yellow-1);
+  --color-yellow-8: var(--oc-yellow-8);
   --color-blue-1: var(--oc-blue-1);
   --color-blue-2: var(--oc-blue-2);
   --color-blue-5: var(--oc-blue-5);
   --color-blue-7: var(--oc-blue-7);
   --color-orange-5: var(--oc-orange-5);
+  --color-orange-8: var(--oc-orange-8);
+  --color-red-1: var(--oc-red-1);
   --color-red-5: var(--oc-red-5);
   --color-red-8: var(--oc-red-8);
   --color-green-8: var(--oc-green-8);
@@ -87,6 +90,9 @@
 @utility menu {
   @apply flex items-center flex-wrap gap-x-4 gap-y-0 text-blue-7 m-0;
 
+  li {
+    @apply my-0;
+  }
   a.selected {
     @apply underline;
   }
@@ -101,7 +107,7 @@
 }
 
 @utility input {
-  @apply px-1 py-1 block-auto max-w-full bg-page-tint border-1 border-gray-4 rounded-sm text-gray-dark text-base font-normal;
+  @apply px-1.5 py-1 block-auto align-[initial] max-w-full bg-page-tint border-1 border-gray-4 rounded-sm text-gray-dark text-base font-normal;
 }
 
 @utility button {
@@ -109,7 +115,7 @@
 }
 
 @utility box {
-  @apply my-2 p-5 bg-page-tint border-1 border-gray-3 rounded-lg;
+  @apply my-2 p-4 bg-page-tint border-1 border-gray-3 rounded-lg;
 }
 
 @utility popbox {
@@ -118,6 +124,20 @@
 
 @utility flatbox {
   @apply my-2 py-2 px-2 bg-gray-2 border-0 rounded-md;
+}
+
+@utility field {
+  @apply ps-45 mbe-2 min-h-8;
+  > label {
+    @apply float-start inline-43 mbs-1 -ms-45 me-2;
+  }
+}
+
+@utility inline-field {
+  @apply float-right ps-0;
+  label {
+    @apply m-0 ms-1 float-none size-auto align-middle;
+  }
 }
 
 body {
@@ -149,7 +169,7 @@ ul {
 }
 
 ul > li {
-  @apply my-2;
+  @apply mbe-2;
 }
 
 strong {
@@ -170,15 +190,21 @@ input, select, textarea, button {
   @apply input;
 }
 
+input[type="radio"],
 input[type="checkbox"] {
   @apply mx-1;
+}
+
+input.autocomplete {
+  background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='30.239px' height='30.239px' viewBox='0 0 30.239 30.239' style='enable-background:new 0 0 30.239 30.239;' xml:space='preserve'%3E%3Cg%3E%3Cpath d='M20.194,3.46c-4.613-4.613-12.121-4.613-16.734,0c-4.612,4.614-4.612,12.121,0,16.735 c4.108,4.107,10.506,4.547,15.116,1.34c0.097,0.459,0.319,0.897,0.676,1.254l6.718,6.718c0.979,0.977,2.561,0.977,3.535,0 c0.978-0.978,0.978-2.56,0-3.535l-6.718-6.72c-0.355-0.354-0.794-0.577-1.253-0.674C24.743,13.967,24.303,7.57,20.194,3.46z M18.073,18.074c-3.444,3.444-9.049,3.444-12.492,0c-3.442-3.444-3.442-9.048,0-12.492c3.443-3.443,9.048-3.443,12.492,0 C21.517,9.026,21.517,14.63,18.073,18.074z'/%3E%3C/g%3E%3C/svg%3E%0A");
+  @apply pe-8 bg-no-repeat bg-size-[16px] bg-position-[right_9px_center];
 }
 
 textarea {
   @apply block;
 
   &.wiki-edit {
-    @apply w-140 max-w-full;
+    @apply w-140 w-full;
   }
 }
 
@@ -230,6 +256,10 @@ label.block {
   @apply flex gap-4 mbs-12 mbe-6 items-center;
 }
 
+.breadcrumbs {
+  @apply hidden;
+}
+
 .general-menu {
   @apply flex gap-3 items-center grow-1;
 
@@ -260,7 +290,7 @@ label.block {
 }
 
 #content > .contextual {
-  @apply my-3;
+  @apply mbs-6 mbe-3;
 }
 
 #content > .badge {
@@ -330,7 +360,7 @@ div.buttons {
 }
 
 fieldset {
-  @apply my-2;
+  @apply mbs-0 mbe-2;
 
   legend {
     @apply text-gray-6;
@@ -365,9 +395,6 @@ fieldset {
 
 }
 
-ul.projects {
-  @apply my-6;
-}
 
 #filters #filters-table,
 #filters #actions-table {
@@ -421,7 +448,7 @@ table {
   }
 
   td,th {
-    @apply pe-3 ps-1 py-1 text-left font-normal align-top;
+    @apply pe-3 ps-1 py-1 text-left font-normal align-top text-sm;
   }
 
   th,
@@ -478,12 +505,9 @@ ul.pages {
 .tabular {
 
   p {
-    @apply my-2;
+    @apply field;
   }
 
-  label {
-    @apply me-2;
-  }
 
   .info {
     @apply block text-gray-6;
@@ -571,4 +595,5 @@ ul.cal {
 @import "./roadmap.css";
 @import "./tooltip.css";
 @import "./gantt.css";
+@import "./projects.css";
 @import "./jqueryui.css";

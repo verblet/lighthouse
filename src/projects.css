@@ -1,0 +1,32 @@
+
+.dashboard.splitcontent {
+    > .splitcontentright,
+    > .splitcontentleft {
+      @apply w-auto;
+    }
+}
+
+
+ul.projects.root {
+  @apply my-6 columns-2 xl:columns-3 gap-4;
+
+  li {
+    @apply break-inside-avoid;
+  }
+  div.description {
+    @apply hidden;
+  }
+
+  ul.projects {
+    @apply ms-5 mbs-2;
+  }
+
+}
+
+.icon-bookmarked-project svg {
+  @apply stroke-gray-6;
+}
+
+.icon-user.my-project svg {
+  @apply stroke-gray-6;
+}

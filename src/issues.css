@@ -134,7 +134,7 @@ div.attributes {
   @apply flex flex-col;
 
   .splitcontent > div {
-    @apply w-[50%];
+    @apply grow-1;
   }
 
 }
@@ -188,8 +188,34 @@ div.attributes {
   @apply text-red-8;
 }
 
+#issue_is_private_wrap {
+  @apply inline-field bg-red-1 py-0.5 px-1.5 rounded-md;
+}
+
 /* WATCHERS */
 
 .watchers li {
   @apply flex gap-2 items-center;
+}
+
+.new-ticket-message {
+  @apply bg-yellow-1 p-3 rounded-md;
+}
+
+#watchers_inputs label {
+    @apply me-2;
+}
+
+
+/* JST EDITOR*/
+
+
+.jstb_pre::before {
+  @apply align-top;
+}
+
+.jstTabs.tabs .jstElements {
+  > button {
+    @apply border-gray-6 align-middle;
+  }
 }
