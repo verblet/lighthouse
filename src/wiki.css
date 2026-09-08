@@ -7,7 +7,16 @@
 }
 
 div.wiki-page {
-  @apply mbs-10 text-lg;
+  @apply my-10 text-lg;
+
+  > * {
+    a.wiki-anchor {
+      @apply hidden ms-1 no-underline text-gray-3;
+    }
+    &:hover a.wiki-anchor {
+      @apply inline-block; 
+    }
+  }
 }
 
 div.wiki {

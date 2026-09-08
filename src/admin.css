@@ -1,18 +1,24 @@
 
 .list.plugins {
-
   span.name {
     @apply block font-bold;
   }
-
 }
 
-
 #admin-index {
-
   ul {
     @apply columns-3 gap-4;
   }
-
-
 }
+
+.tabular.settings > p,
+.tabular.settings > .tab-content > fieldset > p {
+  @apply admin-field;
+}
+
+/*
+.tabular.settings {
+  > p {
+    @apply mbe-3 border-be-1 border-gray-3 pbe-3 overflow-hidden last:border-be-0 last:mbe-0;
+  }
+}*/

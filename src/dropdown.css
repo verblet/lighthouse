@@ -95,10 +95,10 @@ div + .drdn-items {border-block-start: 1px solid var(--color-gray-3);}
   border-radius:3px;
   border:1px solid var(--color-gray-6);
   margin:0 !important;
-  vertical-align:middle;
   color:var(--oc-gray-7);
   background:var(--color-white) url("/assets/chevron-down-f08c7c57.svg") no-repeat 98% 50%;
   @apply input;
+  vertical-align:middle;
 }
 #project-jump .drdn.expanded .drdn-trigger {background-image:url("/assets/arrow_up-4c153772.png");}
 #project-jump .drdn-content {inline-size: 280px;}

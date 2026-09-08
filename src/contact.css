@@ -2,15 +2,36 @@
 #wrapper {
 
   div.contact {
-    @apply flatbox flex gap-1 items-center;
+    @apply flatbox;
+
+    .job_title {
+      @apply hidden;
+    }
 
     .subject_header {
-      @apply flex items-center;
+      @apply items-center;
 
       .name .header {
         @apply primary-link;
       }
 
+    }
+
+    .icon .s18.icon-svg {
+      @apply me-1;
+    }
+
+    .avatar.s32 {
+      @apply w-4 h-4;
+    }
+
+    p {
+      @apply my-0;
+    }
+
+    .contact-details,
+    .name {
+      @apply ps-0;
     }
 
   }

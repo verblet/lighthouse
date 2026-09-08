@@ -11,7 +11,7 @@ body.controller-issues.action-show {
   } */
 
   #main {
-    @apply max-w-270;
+    @apply max-w-300;
   }
 
   .refreshData {
@@ -150,7 +150,7 @@ div.attributes {
 }
 
 #history {
-  @apply mbs-4 mbe-16;
+  @apply mbs-6 mbe-16;
 }
 
 /*
@@ -163,16 +163,16 @@ div.attributes {
 } */
 
 .attribute {
-  @apply flex gap-1;
+  @apply flex gap-1 my-1;
 
   .label {
-    @apply font-bold;
+    @apply inline-block font-bold me-2 !p-0;
   }
 
-  .label,
   .value {
-      @apply inline-block me-2 !p-0;
+    @apply flex me-2 !p-0;
   }
+
 }
 
 .priority-high3,
@@ -203,12 +203,52 @@ div.attributes {
 }
 
 #watchers_inputs label {
-    @apply me-2;
+    @apply me-2 inline-block;
 }
 
 
-/* JST EDITOR*/
+table.progress {
+  @apply rounded-full overflow-hidden border-1 border-gray-3 border-spacing-0 border-separate me-2 min-w-30;
 
+  &[class*="progress-"] {
+      @apply border-primary;
+    }
+  &.progress-0 {
+      @apply border-gray-3;
+  }
+  td.closed {
+    @apply bg-primary;
+  }
+  td {
+    @apply p-2;
+  }
+
+}
+
+/* EDITOR */
+
+form#issue-form {
+  @apply box;
+  .box {
+    @apply border-0 p-0 mbe-4;
+  }
+}
+
+#update {
+
+  div.attributes {
+    @apply border-y-1 border-gray-3 my-4 py-4;
+  }
+
+}
+
+.icon-edit span {
+  @apply flex items-center;
+}
+
+input#issue_subject {
+    @apply w-[70%];
+}
 
 .jstb_pre::before {
   @apply align-top;

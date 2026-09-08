@@ -26,6 +26,7 @@
 
   --color-surface: var(--color-page-tint);
   --color-surface-low: var(--color-gray-vlight);
+  --color-border: var(--color-gray-3);
 
   --color-white: var(--color-page-tint);
 
@@ -60,7 +61,7 @@
 
   --color-yellow-1: var(--oc-yellow-1);
   --color-yellow-8: var(--oc-yellow-8);
-  --color-blue-1: var(--oc-blue-1);
+  --color-blue-1: #eaf6ff;
   --color-blue-2: var(--oc-blue-2);
   --color-blue-5: var(--oc-blue-5);
   --color-blue-7: var(--oc-blue-7);
@@ -72,10 +73,10 @@
   --color-green-8: var(--oc-green-8);
 
   --color-mint-500: oklch(0.72 0.11 178);
-  --text-sm: 14px;
-  --text-base: 16px;
-  --text-lg: 18px;
-  --text-xl: 22px;
+  --text-sm: 13px;
+  --text-base: 15px;
+  --text-lg: 17px;
+  --text-xl: 20px;
   --text-2xl: 26px;
   --text-3xl: 30px;
   --my-line-height: 1.5;
@@ -91,7 +92,7 @@
   @apply flex items-center flex-wrap gap-x-4 gap-y-0 text-blue-7 m-0;
 
   li {
-    @apply my-0;
+    @apply my-1;
   }
   a.selected {
     @apply underline;
@@ -111,7 +112,7 @@
 }
 
 @utility button {
-  @apply border-1 border-gray-4 rounded-md px-2 py-1 text-blue-7 m-0 me-1 text-base hover:underline hover:border-blue-5 hover:text-blue-5 cursor-pointer hover:shadow-[0_1px_2px_rgba(0,0,0,0.1)];
+  @apply border-1 border-blue-7 rounded-md px-2 py-1 text-blue-7 m-0 me-1 text-base hover:underline hover:border-blue-5 hover:text-blue-5 cursor-pointer hover:shadow-[0_1px_2px_rgba(0,0,0,0.1)];
 }
 
 @utility box {
@@ -123,13 +124,30 @@
 }
 
 @utility flatbox {
-  @apply my-2 py-2 px-2 bg-gray-2 border-0 rounded-md;
+  @apply my-2 py-2 px-2 bg-blue-1 border-0 rounded-md;
 }
 
 @utility field {
-  @apply ps-45 mbe-2 min-h-8;
+  @apply ps-45 mbe-1 min-h-8 clear-both;
   > label {
-    @apply float-start inline-43 mbs-1 -ms-45 me-2;
+    @apply float-start text-gray-8 inline-43 mbs-1 -ms-45 me-2;
+  }
+  input,select,
+  .icon, .icon-only {
+    @apply align-middle me-1;
+  }
+  label.block {
+    @apply block my-1 float-none;
+  }
+}
+
+@utility admin-field {
+  @apply ps-85 py-3 my-0 min-h-8 border-be-1 border-gray-1 overflow-hidden last:border-be-0 last:mbe-0;
+  > label {
+    @apply float-start inline-82 mbs-1 -ms-85 me-2;
+  }
+  label.block {
+    @apply block my-1 float-none mx-0 px-0 w-auto;
   }
 }
 
@@ -145,7 +163,7 @@ body {
 }
 
 html, body, table, input {
-  @apply text-gray-8;
+  @apply text-gray-8 text-base;
 }
 
 a {
@@ -153,15 +171,15 @@ a {
 }
 
 h1 {
-  @apply font-bold;
+  @apply text-base font-bold;
 }
 
 h2 {
-  @apply font-medium mbs-6 mbe-3;
+  @apply text-base font-medium mbs-6 mbe-3;
 }
 
 h3 {
-  @apply font-medium mbs-6 mbe-1;
+  @apply text-base font-medium mbs-6 mbe-1;
 }
 
 ul {
@@ -170,6 +188,9 @@ ul {
 
 ul > li {
   @apply mbe-2;
+  &:last-child {
+    @apply mbe-0;
+  }
 }
 
 strong {
@@ -192,7 +213,7 @@ input, select, textarea, button {
 
 input[type="radio"],
 input[type="checkbox"] {
-  @apply mx-1;
+  @apply mx-1 align-middle;
 }
 
 input.autocomplete {
@@ -201,11 +222,7 @@ input.autocomplete {
 }
 
 textarea {
-  @apply block;
-
-  &.wiki-edit {
-    @apply w-140 w-full;
-  }
+  @apply block w-full;
 }
 
 input[type="submit"], button[type="submit"] {
@@ -225,10 +242,17 @@ label.block {
 }
 
 #top-menu {
-  --color-text: var(--color-text);
-  --color-link: var(--color-text);
-  --color-link-hover: var(--color-text);
-  @apply flex border-be-1 border-gray-3 text-text gap-2 items-center py-1 px-10 xl:px-30;
+  --color-text: var(--color-white);
+  --color-link: var(--color-white);
+  --color-link-hover: var(--color-white);
+  --color-border: transparent;
+  --color-surface: var(--color-blue-7);
+  @apply flex border-be-1 bg-surface border-border text-text gap-2 items-center py-1 px-10 xl:px-30;
+
+  #project-jump .drdn-trigger,
+  input {
+      @apply border-border;
+  }
 
   ul {
     @apply menu;
@@ -250,6 +274,16 @@ label.block {
     }
   }
 
+  #quick-search {
+    @apply flex gap-1;
+  }
+
+  .profile-menu {
+    --color-text: var(--color-gray-9);
+    --color-link: var(--color-primary);
+    @apply text-text;
+  }
+
 }
 
 #header {
@@ -265,7 +299,7 @@ label.block {
 
   &:before {
     content: "Lighthouse";
-    @apply me-2 font-bold;
+    @apply me-2 font-bold my-1;
   }
 
 }
@@ -294,7 +328,7 @@ label.block {
 }
 
 #content > .badge {
-  @apply inline-block;
+  @apply inline-block mx-1;
 }
 
 
@@ -324,6 +358,10 @@ div.buttons {
 
 .box {
   @apply box;
+
+  h3:first-child {
+    @apply my-1;
+  }
 }
 
 .tabs ul {
@@ -363,13 +401,13 @@ fieldset {
   @apply mbs-0 mbe-2;
 
   legend {
-    @apply text-gray-6;
+    @apply text-gray-6 my-1 uppercase font-medium;
     svg.icon-svg {
       @apply stroke-gray-6;
     }
   }
 
-  > div {
+  &.collapsible > div {
     @apply ps-5 pbe-2;
   }
 }
@@ -433,13 +471,17 @@ div.flash.notice {
 table {
   @apply min-w-full border-collapse;
 
+  tr.archived td {
+    @apply text-gray-6;
+  }
+
   td.checkbox {
     @apply w-8;
   }
 
   td.subject,
   td.subject > a {
-    @apply font-medium min-w-70;
+    @apply min-w-90;
   }
 
   th.id,
@@ -448,12 +490,12 @@ table {
   }
 
   td,th {
-    @apply pe-3 ps-1 py-1 text-left font-normal align-top text-sm;
+    @apply pe-3 ps-1 py-1 text-left font-normal align-top;
   }
 
   th,
   th a {
-    @apply text-gray-6;
+    @apply text-gray-6 text-nowrap;
   }
 
   th a {
@@ -464,7 +506,12 @@ table {
     }
   }
 
-  .status, .project, .updated_on, .assigned_to, .priority {
+  .author, .assigned_to {
+    @apply min-w-40;
+  }
+
+  .created_on, .due_date,
+  .status, .project, .updated_on,.priority {
     @apply whitespace-nowrap;
   }
 }
@@ -501,7 +548,6 @@ ul.pages {
   @apply col-span-full;
 }
 
-
 .tabular {
 
   p {
@@ -509,12 +555,31 @@ ul.pages {
   }
 
 
-  .info {
+  em {
     @apply block text-gray-6;
   }
 
 }
 
+/*
+.tabular {
+  p {
+    @apply grid grid-cols-[1fr_2fr] justify-start items-center;
+
+    > * {
+      @apply col-2 min-h-min justify-self-start;
+    }
+
+    > label {
+      @apply col-1;
+    }
+
+    em {
+      @apply inline-block text-gray-6;
+    }
+  }
+}
+*/
 div#content .jstTabs.tabs {
 
   li {
@@ -571,7 +636,15 @@ ul.cal {
 }
 
 .badge {
-  @apply bg-gray-2 border-0 rounded-md py-0.5 px-1;
+  @apply bg-gray-2 border-0 rounded-md py-0.5 px-1 text-sm uppercase;
+}
+
+.badge-status-open {
+  @apply bg-blue-1;
+}
+
+.badge-private {
+  @apply bg-red-1;
 }
 
 .required {
@@ -580,6 +653,31 @@ ul.cal {
 
 .context-menu-selection a {
   @apply text-white;
+}
+
+body.controller-projects.action-show #content > .splitcontent > div {
+
+  > .wiki,
+  > ul {
+    @apply box;
+  }
+
+}
+
+/* LOGIN */
+
+body.action-login {
+  #header {
+    @apply hidden;
+  }
+}
+
+#login-form {
+  @apply max-w-80 my-15;
+
+  > form {
+    @apply flex flex-col gap-2;
+  }
 }
 
 

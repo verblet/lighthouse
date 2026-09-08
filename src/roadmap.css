@@ -5,3 +5,16 @@
     }
   }
 }
+
+.version-article {
+  @apply box;
+  .version-overview {
+    @apply flex gap-3;
+    > p:first-child {
+      @apply grow-1;
+    }
+    table.progress {
+      @apply me-0;
+    }
+  }
+}
