@@ -1,4 +1,6 @@
+body.controller-welcome.action-index,
 body.controller-my.action-page {
+  #header h1,
   #sidebar {
     @apply hidden;
   }

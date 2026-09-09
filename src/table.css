@@ -1,6 +1,39 @@
 
+table.list.issues {
+  td,th {
+    @apply border-0;
+  }
+}
+
 table.list {
   @apply box min-w-full border-separate;
+
+  td,th {
+    @apply pe-3 ps-1 py-1 border-be-1 border-gray-3 text-left font-normal align-top;
+    &:first-child {
+      @apply ps-0;
+    }
+    &:last-child {
+      @apply pe-0;
+    }
+  }
+
+  tr:last-child > td {
+    @apply border-be-0;
+  }
+
+  th,
+  th a {
+    @apply text-gray-6 text-nowrap;
+  }
+
+  th a {
+    @apply flex;
+
+    > .icon-svg {
+      @apply order-last;
+    }
+  }
 
   tr.archived td {
     @apply text-gray-6;
@@ -27,30 +60,6 @@ table.list {
   td.buttons {
     @apply text-right;
   }
-
-  td,th {
-    @apply pe-3 ps-1 py-1 text-left font-normal align-top;
-    &:first-child {
-      @apply ps-0;
-    }
-    &:last-child {
-      @apply pe-0;
-    }
-  }
-
-  th,
-  th a {
-    @apply text-gray-6 text-nowrap;
-  }
-
-  th a {
-    @apply flex;
-
-    > .icon-svg {
-      @apply order-last;
-    }
-  }
-
   .author, .assigned_to {
     @apply min-w-40;
   }

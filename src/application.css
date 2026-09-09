@@ -298,6 +298,9 @@ label.block {
 
 #header {
   @apply flex gap-4 mbs-12 mbe-6 items-center;
+  h1 {
+    @apply my-1;
+  }
 }
 
 .breadcrumbs {
@@ -584,7 +587,11 @@ ul.cal {
   @apply text-white;
 }
 
+/* UX */
 
+#content #query_form_open_button {
+  @apply text-base;
+}
 
 @import "./login.css";
 @import "./sidebar.css";
