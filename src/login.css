@@ -1,0 +1,16 @@
+
+/* LOGIN */
+
+body.action-login {
+  #header {
+    @apply hidden;
+  }
+}
+
+#login-form {
+  @apply max-w-80 my-15;
+
+  > form {
+    @apply flex flex-col gap-2;
+  }
+}

@@ -1,66 +1,62 @@
 
-/* TABLE */
-
 table.list {
-  @apply border-separate border-1 border-spacing-0 border-gray-light rounded-md;
+  @apply box min-w-full border-separate;
 
-  th a {
-    @apply sd-th;
+  tr.archived td {
+    @apply text-gray-6;
   }
 
+  tr.ui-sortable-helper {
+    @apply bg-surface;
+  }
+
+  td.checkbox {
+    @apply w-8;
+  }
+
+  td.subject,
+  td.subject > a {
+    @apply min-w-90;
+  }
+
+  th.id,
+  td.id {
+    @apply hidden;
+  }
+
+  td.buttons {
+    @apply text-right;
+  }
+
+  td,th {
+    @apply pe-3 ps-1 py-1 text-left font-normal align-top;
+    &:first-child {
+      @apply ps-0;
+    }
+    &:last-child {
+      @apply pe-0;
+    }
+  }
 
   th,
-  td {
-    @apply px-0 py-2 pe-2 first:ps-2 bg-transparent;
-
-    &.checkbox {
-      @apply p-0;
-    }
-
+  th a {
+    @apply text-gray-6 text-nowrap;
   }
 
-  th {
-    @apply border-b-0;
+  th a {
+    @apply flex;
+
+    > .icon-svg {
+      @apply order-last;
+    }
   }
 
-  td {
-
-    &.subject {
-      @apply font-bold text-base;
-    }
-
-
+  .author, .assigned_to {
+    @apply min-w-40;
   }
 
-
-
-  tr.issue.assigned-to-me td.assigned_to .user {
-    @apply font-normal bg-yellow-1 inline-block px-1 rounded-sm;
+  .created_on, .due_date,
+  .status, .project, .updated_on,.priority {
+    @apply whitespace-nowrap;
   }
-
-  &.issues {
-
-    /* Priority dots */
-
-    th:first-child:before,
-    td:first-child:before {
-      @apply content-[''] block bg-gray-vlight size-3 rounded-full inline-block align-middle ms-2 me-3;
-    }
-
-    tr.priority-high1 td:first-child:before {
-      @apply bg-orange-5 ;
-    }
-
-    tr.priority-high2 td:first-child:before,
-    tr.priority-high3 td:first-child:before {
-      @apply bg-red-5;
-    }
-
-  }
-
-}
-
-
-.nodata {
-  @apply border-dashed border-1 border-gray-light bg-transparent text-gray-medium text-base;
 }

@@ -1,4 +1,12 @@
 
+body.controller-projects.action-show #content > .splitcontent > div {
+
+  > .wiki,
+  > ul {
+    @apply box;
+  }
+
+}
 .dashboard.splitcontent {
     > .splitcontentright,
     > .splitcontentleft {

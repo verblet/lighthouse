@@ -1,6 +1,14 @@
 
 #wrapper {
 
+  table.excerpt.index {
+    @apply border-0;
+  }
+
+  form.new_issue .email-template {
+    @apply flatbox overflow-hidden;
+  }
+
   div.contact {
     @apply flatbox;
 
@@ -9,7 +17,7 @@
     }
 
     .subject_header {
-      @apply items-center;
+      @apply items-center grow-1;
 
       .name .header {
         @apply primary-link;
@@ -31,7 +39,11 @@
 
     .contact-details,
     .name {
-      @apply ps-0;
+      @apply ps-0 grow-1;
+    }
+
+    .icon-email {
+      @apply flex;
     }
 
   }

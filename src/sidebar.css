@@ -1,54 +1,16 @@
 
-#sidebar {
-	@apply menu-wrapper bg-transparent border-0 flex flex-col-reverse border-l-1 border-l-gray-3 p-6;
-
-	ul > li {
-		@apply flex items-center menu-item ;
-
-		> a {
-			@apply menu-item-link;
-
-
-			&.selected {
-				@apply menu-item-link border-0 shadow-none bg-gray-2;
-
-				&:hover {
-					@apply shadow-none bg-gray-1;
-				}
-
-			}
-
-			&.icon-only {
-				@apply grow-0 hover:bg-transparent px-0;
-			}
-		}
-
-	}
-
-	h3 {
-		@apply header-3 px-2;
-	}
-
-	#sidebar-wrapper {
-		@apply grow-1;
-	}
-
-	#watchers .avatar {
-		@apply me-2;
-	}
-
+#sidebar #sidebar-wrapper {
+  @apply w-80 grow-0;
+  p,
+  ul li {
+    @apply mbe-2;
+  }
 }
 
-
+div.nosidebar #sidebar {
+  @apply w-0;
+}
 
 #sidebar-switch-panel {
-	@apply flex  items-center;
-}
-
-#sidebar-switch-button {
-	@apply menu-item  after:content-['Collapse_Sidebar'];
-
-	.collapsedsidebar & {
-		@apply block after:content-[''];
-	}
+  @apply hidden;
 }

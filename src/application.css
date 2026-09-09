@@ -70,6 +70,7 @@
   --color-red-1: var(--oc-red-1);
   --color-red-5: var(--oc-red-5);
   --color-red-8: var(--oc-red-8);
+  --color-green-1: var(--oc-green-1);
   --color-green-8: var(--oc-green-8);
 
   --color-mint-500: oklch(0.72 0.11 178);
@@ -117,6 +118,15 @@
 
 @utility box {
   @apply my-2 p-4 bg-page-tint border-1 border-gray-3 rounded-lg;
+
+  table.list,
+  .box {
+    @apply border-0 p-0 mbe-4;
+
+    &:last-child {
+      @apply mbe-0;
+    }
+  }
 }
 
 @utility popbox {
@@ -128,7 +138,7 @@
 }
 
 @utility field {
-  @apply ps-45 mbe-1 min-h-8 clear-both;
+  @apply ps-45 mbe-1 min-h-8 ;
   > label {
     @apply float-start text-gray-8 inline-43 mbs-1 -ms-45 me-2;
   }
@@ -142,7 +152,7 @@
 }
 
 @utility admin-field {
-  @apply ps-85 py-3 my-0 min-h-8 border-be-1 border-gray-1 overflow-hidden last:border-be-0 last:mbe-0;
+  @apply ps-85 py-3 my-0 clear-both min-h-8 border-be-1 border-gray-1 overflow-hidden last:border-be-0 last:mbe-0;
   > label {
     @apply float-start inline-82 mbs-1 -ms-85 me-2;
   }
@@ -222,7 +232,7 @@ input.autocomplete {
 }
 
 textarea {
-  @apply block w-full;
+  @apply block w-full mbe-2;
 }
 
 input[type="submit"], button[type="submit"] {
@@ -308,7 +318,7 @@ label.block {
 #header,
 #main,
 #footer {
-  @apply mx-10 xl:mx-30;
+  @apply mx-14 xl:mx-30;
 }
 
 #main {
@@ -332,25 +342,6 @@ label.block {
 }
 
 
-#sidebar {
-  @apply w-80 grow-0;
-
-  p {
-    @apply mbe-2;
-  }
-}
-
-div.nosidebar #sidebar {
-  @apply w-0;
-}
-
-#sidebar-switch-panel {
-  @apply hidden;
-}
-
-#query_form_content {
-  @apply mbe-4;
-}
 p.buttons,
 div.buttons {
   @apply flex gap-2 items-center;
@@ -389,12 +380,12 @@ div.buttons {
 
 }
 
-.tabs-buttons {
-  @apply !hidden;
+.tab-content {
+  @apply py-2;
 }
 
-#query_form {
-  @apply my-6;
+.tabs-buttons {
+  @apply !hidden;
 }
 
 fieldset {
@@ -434,87 +425,25 @@ fieldset {
 }
 
 
-#filters #filters-table,
-#filters #actions-table {
-
-  .filter {
-    @apply flex gap-2 items-center my-2;
-
-    .values {
-      @apply flex gap-2 items-center;
-    }
-
-    .field {
-      @apply !w-auto py-1 min-w-20;
-    }
-
-  }
-
-}
-
-.add-filter > label {
-  @apply inline-block py-1 min-w-20;
-}
-
 .autoscroll {
   @apply box overflow-x-auto;
 }
 
 div.flash.notice {
-  @apply flex items-center gap-2 p-2 border-1 border-green-8 text-green-8 rounded-md;
+  @apply flex items-center gap-2 p-2 bg-green-1 border-1 border-green-8 text-green-8 rounded-md;
 
   svg.icon-svg {
     @apply stroke-green-8;
   }
 }
 
-table {
-  @apply min-w-full border-collapse;
-
-  tr.archived td {
-    @apply text-gray-6;
-  }
-
-  td.checkbox {
-    @apply w-8;
-  }
-
-  td.subject,
-  td.subject > a {
-    @apply min-w-90;
-  }
-
-  th.id,
-  td.id {
-    @apply hidden;
-  }
-
-  td,th {
-    @apply pe-3 ps-1 py-1 text-left font-normal align-top;
-  }
-
-  th,
-  th a {
-    @apply text-gray-6 text-nowrap;
-  }
-
-  th a {
-    @apply flex;
-
-    > .icon-svg {
-      @apply order-last;
-    }
-  }
-
-  .author, .assigned_to {
-    @apply min-w-40;
-  }
-
-  .created_on, .due_date,
-  .status, .project, .updated_on,.priority {
-    @apply whitespace-nowrap;
+.autoscroll {
+  @apply box overflow-x-auto;
+  > table.list {
+    @apply p-0 m-0 border-0 border-collapse;
   }
 }
+
 
 ul.pages {
   @apply menu float-right;
@@ -655,36 +584,15 @@ ul.cal {
   @apply text-white;
 }
 
-body.controller-projects.action-show #content > .splitcontent > div {
-
-  > .wiki,
-  > ul {
-    @apply box;
-  }
-
-}
-
-/* LOGIN */
-
-body.action-login {
-  #header {
-    @apply hidden;
-  }
-}
-
-#login-form {
-  @apply max-w-80 my-15;
-
-  > form {
-    @apply flex flex-col gap-2;
-  }
-}
 
 
+@import "./login.css";
+@import "./sidebar.css";
 @import "./icons.css";
 @import "./dropdown.css";
 @import "./avatars.css";
 @import "./admin.css";
+@import "./filter.css";
 @import "./issues.css";
 @import "./activity.css";
 @import "./contact.css";
@@ -692,6 +600,8 @@ body.action-login {
 @import "./mypage.css";
 @import "./roadmap.css";
 @import "./tooltip.css";
+@import "./table.css";
 @import "./gantt.css";
 @import "./projects.css";
+@import "./agile.css";
 @import "./jqueryui.css";

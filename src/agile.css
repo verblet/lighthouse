@@ -1,0 +1,30 @@
+body.controller-agile_boards.action-index {
+
+  #sidebar-wrapper h3:first-child,
+  #sidebar-wrapper ul:nth-child(2) {
+    @apply hidden;
+  }
+
+}
+
+.agile-board.autoscroll {
+  @apply !overflow-x-auto;
+}
+
+
+.agile-board table.issues-board {
+  @apply border-0;
+  .issue-card {
+    @apply flatbox w-60 whitespace-normal;
+    .user {
+      @apply flex items-center;
+    }
+    .issue-id {
+      @apply hidden;
+    }
+
+  }
+  th {
+    @apply min-w-40;
+  }
+}

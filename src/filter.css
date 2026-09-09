@@ -1,0 +1,36 @@
+
+#query_form {
+  @apply my-6;
+}
+#query_form_with_buttons {
+  @apply box;
+}
+#query_form_content {
+  @apply mbe-4;
+}
+
+#filters #filters-table,
+#filters #actions-table {
+
+  .filter {
+    @apply flex gap-2 items-center my-2;
+
+    .values {
+      @apply flex gap-2 items-center;
+    }
+
+    .field {
+      @apply !w-auto py-1 min-w-20;
+    }
+
+  }
+
+}
+
+.add-filter > label {
+  @apply inline-block py-1 min-w-20;
+}
+
+#filters-table {
+  @apply flex gap-2;
+}

@@ -41,10 +41,6 @@ body.controller-issues.action-show {
   @apply text-right clear-both;
 }
 
-#query_form {
-  @apply box;
-}
-
 #content > div.issue {
   @apply clear-both box;
 
@@ -150,7 +146,7 @@ div.attributes {
 }
 
 #history {
-  @apply mbs-6 mbe-16;
+  @apply mbs-2 mbe-16;
 }
 
 /*
@@ -225,13 +221,16 @@ table.progress {
 
 }
 
+/* NOTES */
+
+#wrapper div.add-note {
+  @apply m-0 p-0;
+}
+
 /* EDITOR */
 
 form#issue-form {
   @apply box;
-  .box {
-    @apply border-0 p-0 mbe-4;
-  }
 }
 
 #update {

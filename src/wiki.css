@@ -6,31 +6,65 @@
   @apply text-base;
 }
 
+body.controller-wiki.action-show {
+
+  #content {
+    @apply box px-10 py-6;
+  }
+
+}
+
 div.wiki-page {
-  @apply my-10 text-lg;
+  @apply mbe-10 text-lg;
 
   > * {
     a.wiki-anchor {
       @apply hidden ms-1 no-underline text-gray-3;
     }
     &:hover a.wiki-anchor {
-      @apply inline-block; 
+      @apply inline-block;
     }
   }
 }
 
 div.wiki {
 
+  .pre-wrapper {
+    @apply bg-gray-1 p-2;
+    .copy-pre-content-link {
+      @apply float-right;
+    }
+  }
+
+  ul.toc {
+    @apply my-6;
+    li {
+        @apply my-1;
+    }
+
+    ul {
+      @apply my-1;
+    }
+  }
+
+  .icon-edit {
+    @apply mbs-3 hidden;
+  }
+
+  &:hover .icon-edit {
+    @apply flex text-base;
+  }
+
   h1 {
-    @apply text-2xl my-3;
+    @apply text-3xl mbs-6 mbe-3;
   }
 
   h2 {
-    @apply text-xl my-2;
+    @apply text-2xl mbs-6 mbe-2;
   }
 
   h3 {
-    @apply text-lg my-1;
+    @apply text-xl mbs-6 mbe-2;
   }
 
   p {
@@ -42,10 +76,10 @@ div.wiki {
   }
 
   ul {
-    @apply my-3 list-disc ps-6;
+    @apply my-4 list-disc ps-6;
   }
 
   ul li {
-    @apply ps-1;
+    @apply ps-0;
   }
 }

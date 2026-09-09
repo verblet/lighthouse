@@ -1,4 +1,8 @@
-
+body.controller-my.action-page {
+  #sidebar {
+    @apply hidden;
+  }
+}
 
 #projects-index {
   ul.project {
@@ -10,7 +14,26 @@
 .mypage-box {
   @apply box;
 
+  table.list.tickets {
+    @apply border-0 p-0;
+  }
+
   .autoscroll {
     @apply border-0 p-0;
+  }
+
+  ul.dashboard-list {
+    @apply mx-0 px-0;
+  }
+
+  ul,
+  .wiki,
+  p {
+    @apply mbe-2;
+
+    &:last-child {
+      @apply mbe-0;
+    }
+
   }
 }
